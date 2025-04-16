@@ -1,13 +1,13 @@
 #!/bin/bash
 
-ZIP_FILE="Gridscreen.zip"
-ROKU_IP="192.168.34.113"
+ZIP_FILE="PushUpApp.zip"
+ROKU_IP="192.168.141.113"
 
 # Remove the existing zip file if it exists but ignore hidden zip files
 test -f "$ZIP_FILE" && [[ "$ZIP_FILE" != .* ]] && rm "$ZIP_FILE"
 
 # Compress the roku folders and stuff
-zip -r "$ZIP_FILE" components images assets source Makefile manifest
+zip -r "$ZIP_FILE" components images source Makefile manifest sounds
 
 echo "Compression complete: $ZIP_FILE"
 
