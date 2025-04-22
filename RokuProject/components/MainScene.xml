@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<component name="MainScene" extends="Scene">
+<component name="MainScene" extends="Scene" initialFocus="mainMenu" focusedChild="mainMenu">
+    <interface>
+        <field id="nextScene" type="string" />
+    </interface>
+
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+
     <children>
-        <Label
-            id="counterLabel"
-            text="Push-ups: 0"
-            translation="[500, 300]"
-            color="0xFFFFFFFF"
-        />
-        <Timer
-            id="pushupTimer"
-            repeat="true"
-            duration="2"
-        />
-        <Audio id="audioPlayer" />
-        <Video
-            id="cornerVideo"
-            translation="[100, 50]"
-            width="400"
-            height="300"
-            visible="true"
-            loop="true"
-        />
+        <LabelList
+            id="mainMenu"
+            itemSize="[400, 60]"
+            itemSpacing="[0, 10]">
+            <ContentNode role="content">
+                <ContentNode title="Start Push-ups" />
+                <ContentNode title="Another Option" />
+            </ContentNode>
+        </LabelList>
     </children>
 </component>

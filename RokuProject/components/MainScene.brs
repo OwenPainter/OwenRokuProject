@@ -1,72 +1,43 @@
+'https://github.com/rokudev/samples/blob/master/ux%20components/lists%20and%20grids/LabelListExample/components/labellistscene.xml
+'https://developer.roku.com/en-ca/docs/references/scenegraph/list-and-grid-nodes/labellist.md
+
 sub init()
+    'm.top.backgroundURI = "pkg:/images/rsgde_bg_hd.jpg"
+
+    m.top.nextScene = invalid
+
+    mainMenu = m.top.findNode("mainMenu")
+
+    rect = mainMenu.boundingRect()
+    centerX = (1280 - rect.width) / 2
+    centerY = (720 - rect.height) / 2
+    mainMenu.translation = [ centerX, centerY ]
+
+    m.mainMenu = mainMenu
     m.top.setFocus(true)
-    m.counter = 0
-    m.label = m.top.findNode("counterLabel")
-    m.timer = m.top.findNode("pushupTimer")
-    m.audio = m.top.findNode("audioPlayer")
-    print "Audio node found: "; (m.audio <> invalid)
-
-    m.state = "down"
-
-    m.timer.ObserveField("fire", "onTimerFire")
-    m.timer.control = "start"
-
-    setCornerVideo()
 end sub
 
-'corner video code https://developer.roku.com/docs/references/scenegraph/media-playback-nodes/video.md
-function setCornerVideo() as void
-    videoContent = CreateObject("roSGNode", "ContentNode")
-    videoContent.url = "pkg:/sounds/PushupVid.mp4"
-    videoContent.title = "Pushup Video"
-    videoContent.streamformat = "mp4"
-
-    m.cornerVideo = m.top.findNode("cornerVideo")
-    m.cornerVideo.content = videoContent
-    m.cornerVideo.loop = true
-    m.cornerVideo.control = "play"
-    print "Corner video player started."
-end function
-
-function onKeyEvent(key as String, press as Boolean) as Boolean
+sub onKeyEvent(key as String, press as Boolean) as Boolean
     if press and key = "OK"
-        print "Stopping pushup counter"
-        m.timer.control = "stop"
+        index = m.mainMenu.itemFocused
+        selectedItem = m.mainMenu.content.getChild(index)
+
+        if selectedItem <> invalid
+            title = selectedItem.title
+            print "Selected item: " + title
+
+            if title = "Start Push-ups"
+                print "Requesting PushupScene..."
+                m.top.nextScene = "PushupScene" 'this is the thingy for main.brs
+
+            else if title = "Another Option"
+                print "Doing something else..."
+            end if
+        end if
+
         return true
     end if
-    return false
-end function
 
-sub onTimerFire()
-    if m.state = "down"
-        print "down"
-        if m.audio <> invalid
-            m.audio.control = "stop"
-            audioContent = CreateObject("roSGNode", "ContentNode")
-            audioContent.url = "pkg:/sounds/down.mp3"
-            audioContent.streamFormat = "mp3"
-            m.audio.content = audioContent
-           'm.audio.control = "play"
-            print "down command sent"
-        else
-            print "Error: audio node is not working when playing down"
-        end if
-        m.state = "up"
-    else if m.state = "up"
-        print "up"
-        if m.audio <> invalid
-            m.audio.control = "stop"
-            audioContent = CreateObject("roSGNode", "ContentNode")
-            audioContent.url = "pkg:/sounds/up.mp3"
-            audioContent.streamFormat = "mp3"
-            m.audio.content = audioContent
-           'm.audio.control = "play"
-            print "up command sent"
-        else
-            print "Error: audio node is not working when playing up"
-        end if
-        m.counter += 1
-        m.label.text = "Push-ups: " + m.counter.ToStr()
-        m.state = "down"
-    end if
+    return false
 end sub
+

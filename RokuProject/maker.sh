@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ZIP_FILE="PushUpApp.zip"
-ROKU_IP="192.168.141.113"
+ROKU_IP="192.168.5.26"
 
 # Remove the existing zip file if it exists but ignore hidden zip files
 test -f "$ZIP_FILE" && [[ "$ZIP_FILE" != .* ]] && rm "$ZIP_FILE"
