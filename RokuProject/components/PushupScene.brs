@@ -35,7 +35,9 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
         m.timer.control = "stop"
         return true
     else if press and key = "back"
-        'idk
+        m.top.nextScene = "MainScene"
+        'm.top.close()
+        m.timer.control = "stop"
         return false
     end if
     return false

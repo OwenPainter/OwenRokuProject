@@ -4,8 +4,6 @@
 sub init()
     'm.top.backgroundURI = "pkg:/images/rsgde_bg_hd.jpg"
 
-    m.top.nextScene = invalid
-
     mainMenu = m.top.findNode("mainMenu")
 
     rect = mainMenu.boundingRect()
@@ -29,6 +27,7 @@ sub onKeyEvent(key as String, press as Boolean) as Boolean
             if title = "Start Push-ups"
                 print "Requesting PushupScene..."
                 m.top.nextScene = "PushupScene" 'this is the thingy for main.brs
+                'm.top.close()
 
             else if title = "Another Option"
                 print "Doing something else..."
