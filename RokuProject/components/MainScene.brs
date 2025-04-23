@@ -5,6 +5,7 @@ sub init()
     'm.top.backgroundURI = "pkg:/images/rsgde_bg_hd.jpg"
 
     mainMenu = m.top.findNode("mainMenu")
+    m.top.nextScene = "MainScene"
 
     rect = mainMenu.boundingRect()
     centerX = (1280 - rect.width) / 2

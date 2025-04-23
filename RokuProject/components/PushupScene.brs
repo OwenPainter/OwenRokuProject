@@ -1,4 +1,8 @@
 sub init()
+
+    print("PushupScene init")
+    m.top.nextScene = "PushupScene"
+
     m.top.setFocus(true)
     m.counter = 0
     m.label = m.top.findNode("counterLabel")
@@ -36,9 +40,10 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
         return true
     else if press and key = "back"
         m.top.nextScene = "MainScene"
-        'm.top.close()
         m.timer.control = "stop"
-        return false
+        m.cornerVideo.control = "stop"
+        m.cornerVideo = invalid
+        return true
     end if
     return false
 end function
