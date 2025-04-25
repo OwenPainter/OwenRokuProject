@@ -1,4 +1,5 @@
 sub init()
+    m.top.backgroundURI = "pkg:/images/background.jpg"
 
     print("PushupScene init")
     m.top.nextScene = "PushupScene"

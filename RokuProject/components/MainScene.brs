@@ -1,8 +1,10 @@
 'https://github.com/rokudev/samples/blob/master/ux%20components/lists%20and%20grids/LabelListExample/components/labellistscene.xml
 'https://developer.roku.com/en-ca/docs/references/scenegraph/list-and-grid-nodes/labellist.md
-
+'https://developer.roku.com/docs/references/scenegraph/renderable-nodes/poster.md
 sub init()
-    'm.top.backgroundURI = "pkg:/images/rsgde_bg_hd.jpg"
+    m.top.backgroundURI = "pkg:/images/background.jpg"
+
+    overhang = m.top.findNode("overhangLogo")
 
     mainMenu = m.top.findNode("mainMenu")
     m.top.nextScene = "MainScene"
@@ -40,4 +42,3 @@ sub onKeyEvent(key as String, press as Boolean) as Boolean
 
     return false
 end sub
-

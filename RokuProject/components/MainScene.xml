@@ -7,6 +7,12 @@
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
 
     <children>
+        <Poster
+            id="overhangLogo"
+            uri="pkg:/images/hd_overhang_logo1.png"
+            width="379"
+            height="53"
+            translation="[160,8]" />
         <LabelList
             id="mainMenu"
             itemSize="[400, 60]"
