@@ -20,6 +20,8 @@
             <ContentNode role="content">
                 <ContentNode title="Start Push-ups" />
                 <ContentNode title="Start Squats" />
+                <ContentNode title="Start Sit-ups" />
+                <ContentNode title="Start Leg Raises" />
                 <ContentNode title="Another Option" />
             </ContentNode>
         </LabelList>

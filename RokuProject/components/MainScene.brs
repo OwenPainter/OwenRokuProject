@@ -30,11 +30,22 @@ sub onKeyEvent(key as String, press as Boolean) as Boolean
                 print "Requesting PushupScene..."
                 m.top.nextScene = "PushupScene" 'this is the thingy for main.brs
                 'm.top.close()
+
             else if title = "Start Squats"
                 print "Requesting SquatScene..."
                 m.top.nextScene = "SquatScene"
+
+            else if title = "Start Sit-ups"
+                print "Requesting SitupScene..."
+                m.top.nextScene = "SitupScene"
+
+            else if title = "Start Leg Raises"
+                print "Requesting LegRaiseScene..."
+                m.top.nextScene = "LegRaiseScene"
+
             else if title = "Another Option"
                 print "Doing something else..."
+                
             end if
         end if
 
