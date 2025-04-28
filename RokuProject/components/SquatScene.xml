@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SquatScene" extends="Scene">
+    <interface>
+        <field id="nextScene" type="string" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/SquatScene.brs" />
+
+    <children>
+        <Label
+            id="counterLabel"
+            text="Squats: 0"
+            translation="[30, 30]"
+            font="font:LargeBoldSystemFont"
+            color="0xFFFFFFFF"
+        />
+        <Timer
+            id="pushupTimer"
+            repeat="true"
+            duration="2"
+        />
+        <Audio id="audioPlayer" />
+        <Video
+            id="cornerVideo"
+            translation="[610, 278]"
+            width="700"
+            height="393.75"
+            visible="true"
+            loop="true"
+        />
+    </children>
+</component>

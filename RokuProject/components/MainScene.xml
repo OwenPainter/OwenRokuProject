@@ -19,6 +19,7 @@
             itemSpacing="[0, 10]">
             <ContentNode role="content">
                 <ContentNode title="Start Push-ups" />
+                <ContentNode title="Start Squats" />
                 <ContentNode title="Another Option" />
             </ContentNode>
         </LabelList>
