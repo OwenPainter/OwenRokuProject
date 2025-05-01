@@ -3,7 +3,7 @@
 'https://developer.roku.com/docs/references/scenegraph/renderable-nodes/poster.md
 sub init()
     m.top.backgroundURI = "pkg:/images/background.jpg"
-    overhang = m.top.findNode("overhangLogo")
+    'overhang = m.top.findNode("overhangLogo")
 
     mainMenu = m.top.findNode("mainMenu")
     m.top.nextScene = "MainScene"
@@ -43,9 +43,10 @@ sub onKeyEvent(key as String, press as Boolean) as Boolean
                 print "Requesting LegRaiseScene..."
                 m.top.nextScene = "LegRaiseScene"
 
-            else if title = "Another Option"
-                print "Doing something else..."
-                
+            else if title = "Stopwatch"
+                print "Requesting Stopwatch..."
+                m.top.nextScene = "Stopwatch"
+
             end if
         end if
 

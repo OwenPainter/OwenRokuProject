@@ -9,19 +9,18 @@
         <Label
             id="counterLabel"
             text="Push-ups: 0"
-            translation="[30, 30]"
+            translation="[610, 260]"
             font="font:LargeBoldSystemFont"
             color="0xFFFFFFFF"
         />
         <Timer
             id="pushupTimer"
             repeat="true"
-            duration="2"
+            duration="3.3215"
         />
-        <Audio id="audioPlayer" />
         <Video
             id="cornerVideo"
-            translation="[610, 278]"
+            translation="[610, 320]"
             width="700"
             height="393.75"
             visible="true"

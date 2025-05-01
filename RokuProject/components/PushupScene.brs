@@ -8,8 +8,6 @@ sub init()
     m.counter = 0
     m.label = m.top.findNode("counterLabel")
     m.timer = m.top.findNode("pushupTimer")
-    'm.audio = m.top.findNode("audioPlayer")
-    print "Audio node found: "; (m.audio <> invalid)
 
     m.state = "down"
 

@@ -12,17 +12,19 @@
             uri="pkg:/images/hd_overhang_logo1.png"
             width="379"
             height="53"
-            translation="[160,8]" />
+            translation="[451, 100]" />
+
         <LabelList
             id="mainMenu"
             itemSize="[400, 60]"
-            itemSpacing="[0, 10]">
+            itemSpacing="[0, 10]"
+            translation="[440, 185]">
             <ContentNode role="content">
                 <ContentNode title="Start Push-ups" />
                 <ContentNode title="Start Squats" />
                 <ContentNode title="Start Sit-ups" />
                 <ContentNode title="Start Leg Raises" />
-                <ContentNode title="Another Option" />
+                <ContentNode title="Stopwatch" />
             </ContentNode>
         </LabelList>
     </children>
