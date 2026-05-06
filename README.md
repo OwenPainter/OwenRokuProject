@@ -1,4 +1,4 @@
-# 🏋️‍♂️ Roku Fitness App  
+# Roku Fitness App  
 ### Developed by Owen Painter
 
 Transform your Roku into a personal fitness coach with this sleek, TV-optimized app — no subscriptions, no fluff, just focused training.
